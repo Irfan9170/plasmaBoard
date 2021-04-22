@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const ejs = require("ejs");
 const app = express()
-const port = 3000||process.env
+const port = process.env.port || 3000
 
 app.set('view engine', 'ejs');
 
