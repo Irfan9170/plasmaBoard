@@ -25,6 +25,9 @@ const donorSchema = new mongoose.Schema({
         type:Number,
         
     },
+    city:{
+        type:String
+    },
     blood:{
         type:String
     }
@@ -81,11 +84,12 @@ app.get('/donor',(req,res)=>{
     res.render("donor");
 })
 app.post('/donor',(req,res)=>{
-    
+    console.log(req.body)
     const donor = new Donor({
         name:req.body.name,
         mobile:req.body.mobile,
         pincode:req.body.pincode,
+        city:req.body.city,
         blood:req.body.blood
     })
     donor.save();
