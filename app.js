@@ -96,7 +96,7 @@ app.post('/search',(req,res)=>{
     
     const pin = parseInt(req.body.pincode)
    
-    Donor.find({'blood':req.body.blood}, 'name mobile', function (err, per) {
+    // Donor.find({'blood':req.body.blood}, 'name mobile', function (err, per) {
         
         Donor.find({ 'pincode': pin,'blood':req.body.blood}, 'name mobile', function (err, person) {
             if (err) {
@@ -106,15 +106,13 @@ app.post('/search',(req,res)=>{
                 res.render("err")
             }
             else{
-              res.render("search",{person:person,all:per})
+              res.render("search",{person:person})
               
           
             }
-          })
+          });
       
-      })
-      
-;
+    //   });
    
 })
 app.get('/patient',(req,res)=>{
