@@ -53,14 +53,14 @@
       <th>Mobile</th>
       <th>PINCODE</th>
     </tr>
-    <%   for(let i=0;i<person.length;i++){  %>
-        <tr>
-            <th><%= person[i].name  %> </th>
-          <th><%= person[i].mobile %></th>
-           <th><a class="btn" target="_blank">Connect</a> </th> 
-        </tr>
-    <% } %> 
- 
+   
+   <%   person.forEach(ele=>{ %>
+    <tr>
+        <th><%= ele.name %> </th>
+       <th>Mobile</th>
+       <th>PINCODE</th>
+     </tr>
+   <% }) %> 
   </table>
               
               </div>
