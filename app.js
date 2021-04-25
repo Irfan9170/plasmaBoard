@@ -104,16 +104,16 @@ app.post('/search',(req,res)=>{
     // Donor.find({'blood':req.body.blood}, 'name mobile', function (err, per) {
         
         Donor.find({ 'pincode': pin,'blood':req.body.blood}, 'name mobile', function (err, person) {
-            if (err) {
-                res.render("err")
-            };
-            if(person==0){
-                res.render("err")
-            }
-            else{
+            // if (err) {
+            //     res.render("err")
+            // };
+            // if(person==0){
+            //     res.render("err")
+            // }
+            
               res.render("search",{person:person})
               
-            }
+            
           });
       
     //   });
