@@ -98,7 +98,7 @@ app.post('/donor',(req,res)=>{
 
 app.post('/search',(req,res)=>{
     
-    res.send("hello")
+    res.render("search")
     // const pin = parseInt(req.body.pincode)
    
     // Donor.find({'blood':req.body.blood}, 'name mobile', function (err, per) {
