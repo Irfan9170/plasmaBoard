@@ -106,12 +106,11 @@ app.post('/search',(req,res)=>{
         Donor.find({'blood':req.body.blood}, 'name mobile', function (err, person) {
             if (err) {
                 res.render("err")
+                console.log(err);
             };
-            if(person==0){
-                res.render("err")
-            }
             
               res.render("search",{person:person})
+              console.log(person , person.length,typeof(person))
           });
           
       
