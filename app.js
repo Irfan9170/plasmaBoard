@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const ejs = require("ejs");
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
@@ -148,4 +148,4 @@ app.post('/volunteer',(req,res)=>{
     res.redirect("/")
 })
 
-app.listen(port, () => console.log(`Example app listening on ${port} port!`))
+app.listen(process.env.PORT || 3000, () => console.log(`Example app listening on ${port} port!`))
