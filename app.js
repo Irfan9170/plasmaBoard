@@ -116,6 +116,20 @@ app.post('/search',(req,res)=>{
       });
    
 })
+app.post('/city',(req,res)=>{
+        Donor.find({'city':req.body.city}, 'name mobile', function (err, p) {
+            if (err) {
+                res.render("err")
+                console.log(err);
+            };
+            
+              res.render("city",{person:p})
+          });
+          
+      
+    
+   
+})
 app.get('/patient',(req,res)=>{
     res.render("patient");
 })
