@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.DB_URL,{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://plasma:7Cq7x3iwL1XVmSlA@cluster0.yuwvt.mongodb.net/plasmaBoard",{useNewUrlParser: true,useUnifiedTopology: true});
 
 const donorSchema = new mongoose.Schema({
     name:{
