@@ -113,8 +113,9 @@ app.post('/search',(req,res)=>{
             
               res.render("search",{person:person})
               
-            
+              console.log(person.length)
           });
+          
       
     //   });
    
