@@ -181,7 +181,7 @@ app.post('/resource',(req,res)=>{
     
 })
 app.post('/city',(req,res)=>{
-        Donor.find({'city':req.body.city}, 'name mobile', function (err, p) {
+        Donor.find({'city':req.body.city},  function (err, p) {
             if (err) {
                 res.render("err")
                 console.log(err);
@@ -221,5 +221,7 @@ app.post('/volunteer',(req,res)=>{
     newVolunteer.save();
     res.redirect("/")
 })
-
+app.get('/disclaimer',(req,res)=>{
+    res.render("disclaimer")
+})
 app.listen(process.env.PORT || 3000, () => console.log(`Example app listening on ${port} port!`))
