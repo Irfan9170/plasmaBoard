@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Patient-Plasma Board</title>
+</head><body class="flex flex-col w-screen min-h-screen p-10 bg-gray-100 text-gray-800">
+
+	<!-- Component Start -->
+	
+	 
+	<div  class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full mt-6">
+		<!-- Product Tile Start -->
+		<% for(let i=0;i<res.length;i++){ %>
+        <div class="bg-gray-200"style="padding:20px;">
+			<!-- <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a> -->
+            <h1> </h1>
+			<div class="flex items-center justify-between mt-3">
+				<div>
+					<h1 class="font-medium"><%= res[i].name %></h1>
+				</div>
+				<span class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded"><%= res[i].resource %> </span>
+			
+				<span class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded"><%= res[i].status %> </span>
+			</div>
+			<div class="flex items-center  mt-3">
+				<div class="row-auto">
+					<h1 class="font-medium">Mobile: </h1>
+					
+					</div>
+					<a href="tel:+<%= res[i].mobile  %>" class="font-medium">+<%= res[i].mobile  %> </a>
+					<span style="padding: 10px;font-size:12px;">*<%= res[i].verify  %> </span>
+			</div>
+			<div class="flex items-center  mt-3">
+				<div class="row-auto">
+					<h1 class="font-medium">City: </h1>
+					
+					</div>
+					<h2 class="font-medium"> <%= res[i].city %> </h2>
+			</div>
+			<div class="flex items-center  mt-3">
+				<div class="row-auto">
+					<h1 class="font-medium">Address: </h1>
+					</div>
+					<a href="https://maps.google.com/?q=<%= res[i].address  %>" class="font-small"><%= res[i].address  %> </a>
+			</div><hr style="border-color:black;">
+			<div class="flex items-center  mt-3">
+				<div class="row-auto">
+					<h1 class="font-medium">Helpful: </h1>
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+					  </svg>
+					  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+					  </svg>
+			</div>
+
+			
+			</div>
+	
+		<% } %> 
+        </div>
+		<!-- Product Tile End -->
+		<!-- Product Tile Start -->
+	
+			
+</body>
