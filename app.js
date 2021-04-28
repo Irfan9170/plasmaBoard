@@ -189,7 +189,7 @@ app.post('/city',(req,res)=>{
                 console.log(err);
             };
             
-              res.render("city",{person:p})
+              res.render("city",{person:p,city:req.body.city})
           });
           
       
