@@ -142,7 +142,9 @@ app.post('/search',(req,res)=>{
                 res.render("err")
                 console.log(err);
             };
-            
+            if(person.length==0){
+                res.render("err",{pin:pin,blood:req.body.blood});
+            }
               res.render("search",{all:per,person:person,blood:req.body.blood,pin:pin})
           });
           
